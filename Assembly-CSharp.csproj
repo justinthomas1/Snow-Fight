@@ -56,6 +56,7 @@
      <Compile Include="Assets\CameraStuff.cs" />
      <Compile Include="Assets\Character_Controller.cs" />
      <Compile Include="Assets\CreateAndDestroy.cs" />
+     <Compile Include="Assets\enemy_AI.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/justa/Documents/Unity Projects/Snow Fight/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

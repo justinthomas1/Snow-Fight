@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class CameraStuff : MonoBehaviour
 {
+	public bool playerDead = false;
 	
 	public float speedH = 2.0f;
-
+	
 	private float yaw = 0.0f;
 	private float pitch = -90.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
-    {
-        yaw += speedH * Input.GetAxis("Mouse X");
-	
-	transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+    void Update(){
+		if(!playerDead){
+			yaw += speedH * Input.GetAxis("Mouse X");
+			transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+		}
     }
 }

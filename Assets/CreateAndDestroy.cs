@@ -5,6 +5,7 @@ using UnityEngine;
 public class CreateAndDestroy : MonoBehaviour
 {
 	public float timer = 1.0f;
+	public int damage = 0;
 
 	void FixedUpdate(){
 		timer -= Time.deltaTime;
@@ -12,10 +13,8 @@ public class CreateAndDestroy : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
-    void OnCollisionEnter(Collision col){
-		if(col.gameObject.transform.parent.name == "Map"){
-			Destroy(gameObject);
-		}
+	
+	void OnCollisionEnter(Collision col){
+		Destroy(gameObject);
 	}
 }
