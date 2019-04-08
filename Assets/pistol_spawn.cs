@@ -57,6 +57,10 @@ public class pistol_spawn : MonoBehaviour{
 	
 	private void OnTriggerEnter(Collider col){
 		if(col.gameObject.transform.name.Contains("Player")){
+			//Three possibilities:
+			//1. The current ammo plus the pickup will be less than or equal to the max. Set the current ammo plus whatever the pickup amount is.
+			//2. The current ammo is at max value. Don't do anything in this case.
+			//3. The current ammo plus the pickup will be greater than the max. Set the current ammo to the max value in this case.
 			if((col.gameObject.GetComponent<Character_Controller>().listOfAmmo[currentWeapon] + ammoToGive) < col.gameObject.GetComponent<Character_Controller>().listOfAmmoMax[currentWeapon]){
 				col.gameObject.GetComponent<Character_Controller>().listOfAmmo[currentWeapon] += ammoToGive;
 				transform.gameObject.GetComponent<Renderer>().enabled = false;

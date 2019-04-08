@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4603514322993513715}
   - component: {fileID: 4677311694415765783}
   - component: {fileID: 349499247}
-  - component: {fileID: 349499246}
   - component: {fileID: 349499248}
+  - component: {fileID: 1550105524585639865}
   m_Layer: 0
   m_Name: Enemy Two
   m_TagString: Untagged
@@ -101,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &349499246
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349499242}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3214894, y: 0.45496494, z: 0.3287919}
-  m_Center: {x: -0.0014960468, y: 0.047034808, z: 0.04789299}
 --- !u!114 &349499248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +119,17 @@ MonoBehaviour:
   speed: 5
   scoreToAdd: 10
   forceToPlayerOnImpact: 700
+--- !u!136 &1550105524585639865
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349499242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.16439594
+  m_Height: 0.45496494
+  m_Direction: 1
+  m_Center: {x: -0.0014960468, y: 0.047034808, z: 0.04789299}

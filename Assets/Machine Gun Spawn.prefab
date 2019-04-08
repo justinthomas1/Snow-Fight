@@ -11,27 +11,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9048824, y: 24.50631, z: 7.4347725}
+  m_Size: {x: 13.904882, y: 24.50631, z: 7.4347725}
   m_Center: {x: 0, y: -8.715365, z: -1.7649449}
---- !u!114 &8575555498201783372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571422134758084376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f1d06c1a8f4b8d42a147b4f64ce370f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 1
-  isVisible: 1
-  ammoPickupSound: {fileID: 8300000, guid: 5cdede748c78a1e45840cef3b905d919, type: 3}
-  respawnTimerFINAL: 15
-  respawnTimer: 15
-  ammoToGive: 10
-  currentWeapon: 0
 --- !u!82 &6860426496139878912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -128,6 +109,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8575555498201783372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571422134758084376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1d06c1a8f4b8d42a147b4f64ce370f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
+  isVisible: 1
+  ammoPickupSound: {fileID: 8300000, guid: 5cdede748c78a1e45840cef3b905d919, type: 3}
+  respawnTimerFINAL: 15
+  respawnTimer: 15
+  ammoToGive: 10
+  currentWeapon: 0
 --- !u!1001 &571422134758050224
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1456465711873687461}
   - component: {fileID: 5288345624192433393}
   - component: {fileID: 1199969770}
-  - component: {fileID: 1199969769}
   - component: {fileID: 1199969771}
+  - component: {fileID: 7572298175473216115}
   m_Layer: 0
   m_Name: Enemy One
   m_TagString: Untagged
@@ -99,19 +99,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &1199969769
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199969765}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.035976958, y: 0.050881032, z: 0.035339195}
-  m_Center: {x: -0.00014500228, y: 0.012392633, z: 0.0046217153}
 --- !u!114 &1199969771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +117,17 @@ MonoBehaviour:
   speed: 5
   scoreToAdd: 10
   forceToPlayerOnImpact: 700
+--- !u!136 &7572298175473216115
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199969765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017988479
+  m_Height: 0.050881032
+  m_Direction: 1
+  m_Center: {x: -0.00014500228, y: 0.012392633, z: 0.0046217153}

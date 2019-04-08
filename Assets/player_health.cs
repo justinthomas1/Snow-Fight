@@ -10,12 +10,18 @@ public class player_health : MonoBehaviour{
 	
 	public Text gameOverText;
 	
+	public Image fadeOutImage;
+	
 	public Character_Controller controller;
+	
+	public float playerDeadTimeout = 5.0f;
+
+	void Start(){
+		controller = GetComponent<Character_Controller>();
+	}
 
     // Update is called once per frame
     void Update(){
-        controller = GetComponent<Character_Controller>();
-		
 		if(!controller.playerDead){
 			playerHealth.text = "Health: " + controller.playerHealth;
 			playerAmmo.text = "Ammo: " + controller.listOfAmmo[controller.playerCurrentWeapon];
@@ -27,6 +33,21 @@ public class player_health : MonoBehaviour{
 			playerAmmo.text = "";
 			playerScore.text = "";
 			gameOverText.text = "Game Over!";
+			
+			Color newColor = fadeOutImage.color;
+			
+			if(playerDeadTimeout>0.0f){
+				playerDeadTimeout-= Time.deltaTime;
+			}
+			else if(newColor.a<255.0f){
+				newColor.a +=  Time.deltaTime;
+				fadeOutImage.color = newColor;
+			}
+			
+			if(newColor.a>=255.0f){
+				Debug.Log("Got here.");
+				Application.LoadLevel(0);
+			}
 		}
     }
 }

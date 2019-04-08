@@ -48,7 +48,10 @@ public class enemy_AI : MonoBehaviour{
 		transform.LookAt(whereToAim);
 		
 		//Just move forward relative to where you're facing (which should be at the player!)
-		transform.position += (transform.forward)*Time.deltaTime*speed;
+		Vector3 whereToMove = new Vector3(transform.forward.x,
+										0,
+										transform.forward.z);
+		transform.position += (whereToMove)*Time.deltaTime*speed;
 		
 		//transform.LookAt(player);
     }

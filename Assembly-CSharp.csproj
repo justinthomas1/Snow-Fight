@@ -54,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraStuff.cs" />
+     <Compile Include="Assets\Change_Cams.cs" />
+     <Compile Include="Assets\Change_Options.cs" />
      <Compile Include="Assets\Character_Controller.cs" />
      <Compile Include="Assets\CreateAndDestroy.cs" />
      <Compile Include="Assets\enemy_AI.cs" />
+     <Compile Include="Assets\Load_Level.cs" />
      <Compile Include="Assets\pistol_spawn.cs" />
      <Compile Include="Assets\player_health.cs" />
      <Compile Include="Assets\spawn_enemy.cs" />

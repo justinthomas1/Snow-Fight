@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: ad81463703fbe0d4b9b245cff1c824a5
+  - enabled: 1
+    path: Assets/Scenes/SnowyHills.unity
+    guid: ffd93739930642f48951440bd738ccf5
+  - enabled: 1
+    path: Assets/Scenes/CabinLevel.unity
+    guid: 065931a5d7d7d8a41b1f0e2e8ca8e0e1
+  - enabled: 1
+    path: Assets/Scenes/IcyCavern.unity
+    guid: 09e73e086b9fe5342bfaa446a39ace18
   m_configObjects: {}

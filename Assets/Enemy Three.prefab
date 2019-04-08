@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6146596153028656648}
   - component: {fileID: 860129621949892246}
   - component: {fileID: 934626712}
-  - component: {fileID: 934626711}
   - component: {fileID: 934626713}
+  - component: {fileID: 8237543353130207087}
   m_Layer: 0
   m_Name: Enemy Three
   m_TagString: Untagged
@@ -101,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &934626711
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934626707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.32175148, y: 0.45496422, z: 0.3613572}
-  m_Center: {x: -0.0012291372, y: 0.046952672, z: 0.06417279}
 --- !u!114 &934626713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +119,17 @@ MonoBehaviour:
   speed: 5
   scoreToAdd: 10
   forceToPlayerOnImpact: 700
+--- !u!136 &8237543353130207087
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934626707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1806786
+  m_Height: 0.45496422
+  m_Direction: 1
+  m_Center: {x: -0.0012291372, y: 0.046952672, z: 0.06417279}
