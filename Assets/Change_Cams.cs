@@ -12,6 +12,8 @@ public class Change_Cams : MonoBehaviour{
     void Start(){
         mainCamera.enabled = true;
 		sideCamera.enabled = false;
+		
+		
     }
 	
 	void OnMouseEnter(){

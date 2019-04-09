@@ -89,9 +89,11 @@ public class Character_Controller : MonoBehaviour{
 			if(Input.GetMouseButtonDown(0)){
 				if(listOfWeaponNames[playerCurrentWeapon] == "Pistol"){
 					if(listOfAmmo[0]>0){
-						GameObject bullet = Instantiate(snowball, GameObject.Find("PistolBulletSpawnpoint").transform.position, Quaternion.identity) as GameObject;
+						Transform pistolBulletSpawnpointTransform = GameObject.Find("PistolBulletSpawnpoint").transform;
+						
+						GameObject bullet = Instantiate(snowball, pistolBulletSpawnpointTransform.position, Quaternion.identity) as GameObject;
 						bullet.GetComponent<CreateAndDestroy>().damage = 3;
-						bullet.GetComponent<Rigidbody>().AddForce(cam.forward * forceOfSnowballs);
+						bullet.GetComponent<Rigidbody>().AddForce(pistolBulletSpawnpointTransform.forward * forceOfSnowballs);
 						listOfAmmo[0]--;
 						source.time = 1.6f;
 						source.PlayOneShot(gunshotSounds[0], vol);
@@ -107,30 +109,32 @@ public class Character_Controller : MonoBehaviour{
 							Vector3 upOfGun = cam.up;
 							Vector3 sideOfGun = cam.right;
 							
+							Transform shotgunBulletSpawnpointTransform = GameObject.Find("ShotgunBulletSpawnpoint").transform;
+							
 							int forceOfSeparationOnShotgunBullets = 500;
 							
 							//So here I'm instantiating every single bullet. Each of them shoots off in a different direction, so doing manually seemed best.
 							//there's probably a better way to do this, but I'm leaving it as is unless I decide to rewrite the math.
-							bullets[0,0] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + -(sideOfGun)*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[0,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun) + upOfGun) + (cam.forward * forceOfSnowballs));
-							bullets[0,1] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + Vector3.zero*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[0,1].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(upOfGun) + (cam.forward * forceOfSnowballs));
-							bullets[0,2] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + (sideOfGun)*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[0,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun) + upOfGun) + (cam.forward * forceOfSnowballs));
+							bullets[0,0] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + -(sideOfGun)*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[0,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun) + upOfGun) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[0,1] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + Vector3.zero*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[0,1].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(upOfGun) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[0,2] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + (sideOfGun)*spaceBetweenBullets + upOfGun*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[0,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun) + upOfGun) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
 							
-							bullets[1,0] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + -(sideOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[1,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun)) + (cam.forward * forceOfSnowballs));
-							bullets[1,1] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + Vector3.zero*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[1,1].GetComponent<Rigidbody>().AddForce((cam.forward * forceOfSnowballs));
-							bullets[1,2] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + (sideOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[1,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun)) + (cam.forward * forceOfSnowballs));
+							bullets[1,0] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + -(sideOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[1,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun)) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[1,1] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + Vector3.zero*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[1,1].GetComponent<Rigidbody>().AddForce((shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[1,2] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + (sideOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[1,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun)) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
 							
-							bullets[2,0] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + -(sideOfGun)*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[2,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun) + -(upOfGun)) + (cam.forward * forceOfSnowballs));
-							bullets[2,1] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + Vector3.zero*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[2,1].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-upOfGun) + (cam.forward * forceOfSnowballs));
-							bullets[2,2] = Instantiate(snowball, GameObject.Find("ShotgunBulletSpawnpoint").transform.position + (sideOfGun)*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
-							bullets[2,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun) + -upOfGun) + (cam.forward * forceOfSnowballs));
+							bullets[2,0] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + -(sideOfGun)*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[2,0].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-(sideOfGun) + -(upOfGun)) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[2,1] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + Vector3.zero*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[2,1].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*(-upOfGun) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
+							bullets[2,2] = Instantiate(snowball, shotgunBulletSpawnpointTransform.position + (sideOfGun)*spaceBetweenBullets + -(upOfGun)*spaceBetweenBullets, Quaternion.identity) as GameObject;
+							bullets[2,2].GetComponent<Rigidbody>().AddForce(forceOfSeparationOnShotgunBullets*((sideOfGun) + -upOfGun) + (shotgunBulletSpawnpointTransform.forward * forceOfSnowballs));
 							
 							for(int i=0; i<3; i++){
 								for(int j=0; j<3; j++){
@@ -150,9 +154,11 @@ public class Character_Controller : MonoBehaviour{
 				if(canFireMGAgain){
 					if(listOfWeaponNames[playerCurrentWeapon] == "MachineGun"){
 						if(listOfAmmo[2]>0){
-							GameObject bullet = Instantiate(snowball, GameObject.Find("MachineGunBulletSpawnpoint").transform.position, Quaternion.identity) as GameObject;
+							Transform machineGunBulletSpawnpointTransform = GameObject.Find("MachineGunBulletSpawnpoint").transform;
+							
+							GameObject bullet = Instantiate(snowball, machineGunBulletSpawnpointTransform.position, Quaternion.identity) as GameObject;
 							bullet.GetComponent<CreateAndDestroy>().damage = 1;
-							bullet.GetComponent<Rigidbody>().AddForce(cam.forward * forceOfSnowballs);
+							bullet.GetComponent<Rigidbody>().AddForce(machineGunBulletSpawnpointTransform.forward * forceOfSnowballs);
 							listOfAmmo[2]--;
 							source.PlayOneShot(gunshotSounds[2], vol);
 							canFireMGAgain = false;

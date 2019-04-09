@@ -41,9 +41,11 @@ public class Change_Options : MonoBehaviour{
 		
 		if(textFromObject == "Survival"){
 			survivalToggled = true;
+			map_settings.TimeAttack = false;
 		}
 		else if(textFromObject == "Time Attack"){
 			survivalToggled = false;
+			map_settings.TimeAttack = true;
 		}
 	}
 }

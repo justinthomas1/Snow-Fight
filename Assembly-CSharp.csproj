@@ -60,6 +60,7 @@
      <Compile Include="Assets\CreateAndDestroy.cs" />
      <Compile Include="Assets\enemy_AI.cs" />
      <Compile Include="Assets\Load_Level.cs" />
+     <Compile Include="Assets\map_settings.cs" />
      <Compile Include="Assets\pistol_spawn.cs" />
      <Compile Include="Assets\player_health.cs" />
      <Compile Include="Assets\spawn_enemy.cs" />

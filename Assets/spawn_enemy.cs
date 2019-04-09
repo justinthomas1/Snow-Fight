@@ -44,7 +44,7 @@ public class spawn_enemy : MonoBehaviour
 				Instantiate(enemy3, transform.position, Quaternion.identity);
 			}
 			
-			timeTillNextSpawn -= 0.1f;
+			timeTillNextSpawn -= 1.0f;
 			curTime = timeTillNextSpawn;
 		}
     }
